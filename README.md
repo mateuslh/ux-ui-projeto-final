@@ -143,7 +143,7 @@ O dev server abre por padrão em `http://localhost:5173`.
 
 O protótipo é publicado automaticamente na **Vercel** a cada push na branch `main`.
 
-- URL de produção: _a definir_
+- URL de produção: [ux-ui-projeto-final](https://ux-ui-projeto-final.vercel.app/)
 ---
 
 ## Licença
