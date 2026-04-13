@@ -80,7 +80,7 @@ Todos os diagramas do projeto foram feitos em **[Mermaid](https://mermaid.js.org
 
 1. Abra o arquivo `.md` aqui no GitHub (ex: [`02-user-flow.md`](entregaveis/02-Arquitetura%20de%20Informa%C3%A7%C3%A3o%20%28sitemap%29%20%2B%20User%20Flow/02-user-flow.md)).
 2. Encontre um bloco que começa contem o mermaid, e copie.
-![img.png](entregaveis/assets/prints/img.png) 
+![img.png](entregaveis/assets/prints/copiar-mermaid-github.png) 
 3. Acesse [mermaid.live](https://mermaid.live), apague o exemplo que aparece no editor da esquerda e cole o código.
 4. O diagrama renderiza na hora no lado direito — use o mouse para dar zoom, arrastar e navegar em geral.
 

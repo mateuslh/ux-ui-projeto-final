@@ -15,6 +15,8 @@ Cada fluxo parte de uma intenção concreta do usuário e segue até a conclusã
 
 ## 2. Fluxo 0 — Entrada e autenticação
 
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
+
 ```mermaid
 flowchart TD
     Start([Abre o app]) --> Splash[Splash]
@@ -34,6 +36,8 @@ flowchart TD
 ## 3. Fluxo 1 — Consultar próxima aula e abrir call online
 
 **Persona:** Estudante que quer saber qual é a próxima aula e entrar na call se for online.
+
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
 
 ```mermaid
 flowchart TD
@@ -57,6 +61,8 @@ flowchart TD
 ## 4. Fluxo 2 — Pagar mensalidade
 
 **Persona:** Estudante com mensalidade próxima do vencimento.
+
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
 
 ```mermaid
 flowchart TD
@@ -83,6 +89,8 @@ flowchart TD
 
 **Persona:** Estudante em período de rematrícula.
 
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
+
 ```mermaid
 flowchart TD
     A([Início]) --> B[Home]
@@ -107,6 +115,8 @@ flowchart TD
 
 **Persona:** Estudante que quer ver desempenho acadêmico.
 
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
+
 ```mermaid
 flowchart TD
     A([Início]) --> B[Home]
@@ -125,6 +135,8 @@ flowchart TD
 ## 7. Fluxo 5 — Acessar material de estudo
 
 **Persona:** Estudante que precisa de um PDF de aula.
+
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
 
 ```mermaid
 flowchart TD
@@ -147,6 +159,8 @@ flowchart TD
 ## 8. Fluxo 6 — Ver atividade pendente e marcar como concluída
 
 **Persona:** Estudante que quer acompanhar tarefas.
+
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
 
 ```mermaid
 flowchart TD
@@ -172,6 +186,8 @@ flowchart TD
 
 **Persona:** Estudante notificado sobre aviso importante.
 
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
+
 ```mermaid
 flowchart TD
     A([Notificação push]) --> B{Toca na notificação?}
@@ -189,6 +205,8 @@ flowchart TD
 ## 10. Fluxo 8 — Participar de votação da turma
 
 **Persona:** Estudante que quer votar em enquete da turma.
+
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
 
 ```mermaid
 flowchart TD

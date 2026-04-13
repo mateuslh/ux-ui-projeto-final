@@ -22,6 +22,8 @@ A arquitetura do aplicativo é organizada em torno de seis áreas principais, ac
 
 ## 2. Sitemap geral
 
+> **Nota:** caso encontre dificuldade para visualizar o diagrama diretamente pelo renderizador do GitHub, recomenda-se consultar a seção [Sobre os diagramas (Mermaid)](../../README.md#sobre-os-diagramas-mermaid) no README principal do projeto, que descreve como utilizar o [mermaid.live](https://mermaid.live) para uma navegação mais confortável.
+
 ```mermaid
 graph TD
     A[Splash / Login] --> B[Início]
