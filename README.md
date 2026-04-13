@@ -67,6 +67,25 @@ graph TD
 
 ---
 
+## Sobre os diagramas (Mermaid)
+
+Todos os diagramas do projeto foram feitos em **[Mermaid](https://mermaid.js.org)**: uma forma de escrever diagramas como texto dentro do próprio `.md`. A vantagem é que o diagrama fica versionado junto do código, é fácil de editar e o **GitHub renderiza automaticamente** quando você abre o arquivo.
+
+### Como visualizar
+
+- **Direto no GitHub** — basta abrir o `.md` aqui no repositório. O diagrama aparece já renderizado junto do texto.
+- **No [mermaid.live](https://mermaid.live)** — recomendado para os diagramas maiores (como o sitemap completo), porque o site permite **zoom, pan e etc**.
+
+### Como jogar um diagrama no mermaid.live
+
+1. Abra o arquivo `.md` aqui no GitHub (ex: [`02-user-flow.md`](entregaveis/02-Arquitetura%20de%20Informa%C3%A7%C3%A3o%20%28sitemap%29%20%2B%20User%20Flow/02-user-flow.md)).
+2. Encontre um bloco que começa contem o mermaid, e copie.
+![img.png](entregaveis/assets/prints/img.png) 
+3. Acesse [mermaid.live](https://mermaid.live), apague o exemplo que aparece no editor da esquerda e cole o código.
+4. O diagrama renderiza na hora no lado direito — use o mouse para dar zoom, arrastar e navegar em geral.
+
+---
+
 ## Estrutura do repositório
 
 ```
