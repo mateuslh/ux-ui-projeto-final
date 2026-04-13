@@ -146,6 +146,15 @@ O protótipo é publicado automaticamente na **Vercel** a cada push na branch `m
 - URL de produção: [ux-ui-projeto-final](https://ux-ui-projeto-final.vercel.app/)
 ---
 
+## Responsáveis
+
+| Nome | E-mail | GitHub |
+|---|---|---|
+| Mateus Leal Hemkemeier | [mateuslealhemkemeier@gmail.com](mailto:mateuslealhemkemeier@gmail.com) | [@mateuslh](https://github.com/mateuslh) |
+| Carlos Eduardo Bez Fontana | [carloseduardobezfontana@gmail.com](mailto:carloseduardobezfontana@gmail.com) | [@Carloseduardob](https://github.com/Carloseduardob) |
+
+---
+
 ## Licença
 
 Ver [LICENSE](LICENSE).
