@@ -144,13 +144,6 @@ O dev server abre por padrão em `http://localhost:5173`.
 O protótipo é publicado automaticamente na **Vercel** a cada push na branch `main`.
 
 - URL de produção: _a definir_
-
----
-
-## Persona
-
-**Mateus Leal Hemkemeier**, 22 anos, estudante universitário, nível técnico intermediário. Usa o celular como principal ferramenta para gerenciar a rotina acadêmica diária.
-
 ---
 
 ## Licença
