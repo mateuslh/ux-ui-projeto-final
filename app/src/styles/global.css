@@ -1,0 +1,101 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-t2);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-primary-700);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.t1 {
+  font-size: var(--font-size-t1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong);
+  line-height: var(--line-height-tight);
+}
+
+.t2 {
+  font-size: var(--font-size-t2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.t3 {
+  font-size: var(--font-size-t3);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

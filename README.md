@@ -31,7 +31,7 @@ Os processos acadêmicos atuais da universidade são realizados majoritariamente
 - **Vite** — build e dev server
 - **Vercel** — hospedagem do protótipo publicado
 
-O código-fonte do protótipo ficará na pasta `src/`.
+O código-fonte do protótipo fica isolado na pasta `app/`, com a estrutura padrão do Vite (`app/src/` para o código React). Nada do projeto React vaza para a raiz do repositório, que permanece limpa para documentação e entregáveis.
 
 ---
 
@@ -96,7 +96,12 @@ Todos os diagramas do projeto foram feitos em **[Mermaid](https://mermaid.js.org
 │   ├── 01-Declaração do Problema + Persona + Jornada + Usabilidade/
 │   └── 02-Arquitetura de Informação (sitemap) + User Flow/
 │   ...
-├── src/                    # Código-fonte do protótipo
+├── app/                    # Projeto React (Vite) do protótipo
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── index.html
+│   └── src/                # Código React (components, pages, styles)
+├── .agent                  # Guia para agentes de IA que mexem no repo
 ├── LICENSE
 └── README.md
 ```
@@ -115,7 +120,11 @@ Todos os diagramas do projeto foram feitos em **[Mermaid](https://mermaid.js.org
 
 ## Rodando o protótipo localmente
 
+Todos os comandos devem ser executados de dentro da pasta `app/`:
+
 ```bash
+cd app
+
 # instalar dependências
 npm install
 

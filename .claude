@@ -1,0 +1,95 @@
+
+## O que é este projeto
+
+Projeto final da disciplina de UX/UI: protótipo de **Aplicativo Acadêmico SATC**,
+um app mobile para estudantes universitários centralizar rotina acadêmica
+(aulas, notas, mensalidades, atividades, avisos, chat da turma).
+
+A referência de produto, escopo, persona, jornada e diretrizes de UX/UI está em:
+`docs/01-visao-geral-do-projeto.md`. **Consulte antes** de tomar decisões de
+produto ou design.
+
+## Estrutura do repositório
+
+```
+.
+├── docs/          # Documentação de produto (visão geral, escopo, UX/UI)
+├── entregaveis/   # Entregas da disciplina (persona, jornada, sitemap, flows)
+├── app/           # Projeto React (Vite) — TODO o código vive aqui
+└── README.md
+```
+
+**Regra rígida:** todo código do protótipo deve ficar dentro de `app/`. Nada
+de arquivos de build, config de JS, `node_modules`, `package.json` ou similares
+na raiz do repo. A raiz é reservada para documentação e entregáveis.
+
+## Stack
+
+- **React 18** + **Vite 5** (JSX, sem TypeScript)
+- **CSS puro** com design tokens em `app/src/styles/tokens.css`
+  (nada de Tailwind, styled-components, CSS-in-JS ou libs de UI)
+- **Sem libs de roteamento ainda** — o projeto começa com uma única HomePage
+
+## Comandos
+
+Sempre a partir de `app/`:
+
+```bash
+cd app
+npm install          # instalar dependências
+npm run dev          # dev server em http://localhost:5173
+npm run build        # build de produção
+npm run preview      # servir o build local
+```
+
+Se `npm install` falhar por causa de registry corporativo (Nexus, Artifactory),
+use `--registry=https://registry.npmjs.org/`.
+
+## Convenções de código
+
+### Mobile-first, sempre
+- Largura do app travada em `max-width: 480px` (ver `HomePage.css` e `BottomNav.css`).
+- Interações pensadas para toque: áreas mínimas confortáveis, `:active` com feedback,
+  sem hover como estado principal.
+- `viewport` com `viewport-fit=cover` e uso de `env(safe-area-inset-*)` para notch.
+
+### Hierarquia visual T1/T2/T3
+A doc define três níveis de prioridade (T1 alta, T2 média, T3 baixa). Existem
+classes utilitárias `.t1`, `.t2`, `.t3` em `global.css`. Respeite a hierarquia
+ao adicionar telas novas.
+
+### Paleta SATC
+Apenas tons de verde da marca, definidos como CSS vars em `tokens.css`:
+`--color-primary-900` (#03362A) até `--color-primary-300` (#A6D062).
+**Não introduza cores fora dessa paleta** sem confirmar com o usuário.
+
+### Estrutura de componentes
+Um componente = uma pasta com `.jsx` + `.css` co-localizados:
+
+```
+app/src/components/NomeDoComponente/
+├── NomeDoComponente.jsx
+└── NomeDoComponente.css
+```
+
+Páginas seguem o mesmo padrão em `app/src/pages/`.
+
+### Dados
+Dados mockados ficam ao lado da página que os consome (ex.:
+`app/src/pages/HomePage/homeMock.js`). Não há backend nem camada de API ainda.
+
+### Acessibilidade
+- Use HTML semântico (`header`, `main`, `nav`, `section`, `article`).
+- Rótulos `aria-label`/`aria-labelledby` em regiões sem título visível.
+- `:focus-visible` já configurado globalmente — não remova.
+
+## O que NÃO fazer
+
+- Não adicione TypeScript, Tailwind, styled-components, Zustand, Redux, React Router
+  ou qualquer dependência pesada sem pedido explícito.
+- Não crie arquivos na raiz do repo que pertençam ao projeto React.
+- Não invente funcionalidades fora do escopo da doc. Fora do escopo:
+  funcionalidades de professor, administração da universidade, execução de
+  aulas remotas dentro do app.
+- Não suba o limite de `max-width` sem motivo — é mobile-first por design.
+- Não gere comentários explicando o óbvio. Identificadores bem nomeados bastam.

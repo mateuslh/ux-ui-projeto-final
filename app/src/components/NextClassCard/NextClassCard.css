@@ -1,0 +1,93 @@
+.next-class {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.next-class::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background-color: var(--color-primary-500);
+}
+
+.next-class--online::before {
+  background-color: var(--color-primary-700);
+}
+
+.next-class__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.next-class__tag {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-800);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+}
+
+.next-class--online .next-class__tag {
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary-700);
+}
+
+.next-class__time {
+  font-size: var(--font-size-t3);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.next-class__subject {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong);
+  line-height: var(--line-height-tight);
+}
+
+.next-class__teacher {
+  font-size: var(--font-size-t3);
+  color: var(--color-text-muted);
+}
+
+.next-class__where {
+  font-size: var(--font-size-t3);
+  color: var(--color-text);
+  margin-top: var(--space-1);
+}
+
+.next-class__action {
+  margin-top: var(--space-3);
+  background-color: var(--color-primary-500);
+  color: var(--color-primary-900);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+.next-class__action:active {
+  transform: scale(0.98);
+  background-color: var(--color-primary-300);
+}
+
+.next-class__action--secondary {
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary-900);
+  border: 1px solid var(--color-border);
+}
