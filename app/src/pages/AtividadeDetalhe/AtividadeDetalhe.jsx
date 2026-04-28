@@ -87,7 +87,7 @@ function PendingView({ params }) {
       </section>
 
       <div className="ativ-submit">
-        <button type="button" className="ativ-submit__btn">
+        <button type="button" className="ativ-submit__btn" disabled title="Envio disponível no portal acadêmico">
           Enviar atividade
         </button>
         <p className="ativ-submit__hint">O envio será feito pelo portal acadêmico.</p>

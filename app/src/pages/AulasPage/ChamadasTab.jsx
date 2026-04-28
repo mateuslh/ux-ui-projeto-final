@@ -7,6 +7,13 @@ function pad(n) {
   return String(n).padStart(2, '0');
 }
 
+function formatMonthYear(month, year) {
+  return new Date(year, month - 1, 1).toLocaleDateString('pt-BR', {
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
 function ChamadasTab({ onNavigate }) {
   const { month, year, today, stats, bySubject, days } = chamadasMock;
 
@@ -91,7 +98,7 @@ function ChamadasTab({ onNavigate }) {
       </section>
 
       <div className="chamadas-cal">
-        <p className="chamadas-cal__month">Abril 2026</p>
+        <p className="chamadas-cal__month">{formatMonthYear(month, year)}</p>
         <div className="chamadas-cal__week">
           {WEEK_DAYS.map((d) => (
             <span key={d} className="chamadas-cal__wday">{d}</span>
@@ -140,7 +147,8 @@ function ChamadasTab({ onNavigate }) {
             const isCritical = s.frequency < minFrequency;
             const isWarn = s.frequency === minFrequency;
             const missedLessons = s.faltas;
-            const missedFullDays = missedLessons / 4;
+            const missedFullDays = Math.floor(missedLessons / 4);
+            const remainingLessons = missedLessons % 4;
             return (
               <li key={s.id} className="chamadas-subject">
                 <div className="chamadas-subject__header">
@@ -172,7 +180,11 @@ function ChamadasTab({ onNavigate }) {
                   </p>
                   <p className="chamadas-subject__absence-item">
                     <span className="chamadas-subject__absence-label">Dias inteiros faltados</span>
-                    <strong className="chamadas-subject__absence-value">{missedFullDays.toFixed(2)}</strong>
+                    <strong className="chamadas-subject__absence-value">{missedFullDays}</strong>
+                  </p>
+                  <p className="chamadas-subject__absence-item">
+                    <span className="chamadas-subject__absence-label">Aulas fora de dia inteiro</span>
+                    <strong className="chamadas-subject__absence-value">{remainingLessons}</strong>
                   </p>
                 </div>
               </li>

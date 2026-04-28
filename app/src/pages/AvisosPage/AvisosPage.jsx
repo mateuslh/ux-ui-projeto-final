@@ -155,7 +155,7 @@ function AvisosPage({ onNavigate }) {
               aria-label="Mensagem"
               readOnly
             />
-            <button type="button" className="chat-send" aria-label="Enviar">
+            <button type="button" className="chat-send" aria-label="Enviar" disabled title="Envio de mensagem em breve">
               ➤
             </button>
           </div>

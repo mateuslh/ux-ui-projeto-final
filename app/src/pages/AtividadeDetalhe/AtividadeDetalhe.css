@@ -142,6 +142,11 @@
   opacity: 0.7;
 }
 
+.ativ-submit__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .ativ-submit__hint {
   font-size: var(--font-size-t3);
   color: var(--color-text-muted);

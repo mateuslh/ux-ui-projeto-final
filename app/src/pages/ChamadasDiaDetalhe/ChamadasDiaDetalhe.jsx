@@ -174,8 +174,39 @@ function AppealForm({ absences, dateKey }) {
   );
 }
 
-function ActionsSection({ absences, absentLessons, dateKey }) {
+function ActionsSection({ absences, absentLessons, dateKey, dayLabel, classes }) {
   const [showAppeal, setShowAppeal] = useState(absences.length > 0);
+
+  function handleContact() {
+    const subject = encodeURIComponent(`Dúvida de frequência - ${dayLabel}`);
+    const body = encodeURIComponent(
+      `Olá, coordenação.\n\nTenho uma dúvida sobre minha frequência em ${dayLabel}.\n\nObrigado.`
+    );
+    window.location.href = `mailto:coordenacao@satc.edu.br?subject=${subject}&body=${body}`;
+  }
+
+  function handleDownloadSummary() {
+    const lines = [
+      `Resumo de presença - ${dayLabel}`,
+      '',
+      ...classes.map((cls) => {
+        const status =
+          cls.status === 'presente' ? 'Presente' :
+          cls.status === 'falta' ? 'Falta' :
+          cls.status === 'parcial' ? 'Parcial' : 'Aguardando';
+        return `- ${cls.subject} | ${cls.time} | ${status} | ${cls.aulaCount} aula(s)`;
+      }),
+    ];
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `resumo-frequencia-${dateKey}.txt`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(url);
+  }
 
   return (
     <section aria-labelledby="sec-acoes">
@@ -191,12 +222,12 @@ function ActionsSection({ absences, absentLessons, dateKey }) {
           </p>
         </button>
 
-        <button type="button" className="action-card action-card--muted">
+        <button type="button" className="action-card action-card--muted" onClick={handleContact}>
           <p className="action-card__title">Falar com coordenação</p>
           <p className="action-card__text">Atendimento acadêmico e orientação de frequência.</p>
         </button>
 
-        <button type="button" className="action-card action-card--muted">
+        <button type="button" className="action-card action-card--muted" onClick={handleDownloadSummary}>
           <p className="action-card__title">Baixar resumo do dia</p>
           <p className="action-card__text">Exportar conteúdo e status de presença.</p>
         </button>
@@ -261,7 +292,13 @@ function ChamadasDiaDetalhe({ params, onBack }) {
               <DayContentList classes={classes} />
             </section>
 
-            <ActionsSection absences={absences} absentLessons={absentLessons} dateKey={params.dateKey} />
+            <ActionsSection
+              absences={absences}
+              absentLessons={absentLessons}
+              dateKey={params.dateKey}
+              dayLabel={dayLabel}
+              classes={classes}
+            />
           </>
         )}
       </main>
