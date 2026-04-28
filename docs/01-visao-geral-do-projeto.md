@@ -637,6 +637,10 @@ A navegação deve ser simples e previsível, com foco nas áreas mais relevante
 * Destaque visual para o formato da aula
 * Link da call em aulas online
 * Organização por dia ou período
+* Aba de frequência/chamadas com calendário de presença
+* Contadores de presença e faltas (incluindo regra de 4 aulas por dia com falta)
+* Detalhe por dia ao clicar no calendário (conteúdo + opções)
+* Recurso de falta com envio de comprovante/atestado
 
 ### 5. Notas
 
@@ -756,5 +760,122 @@ A experiência deve ser centrada em:
 * prioridade visual bem definida
 * comunicação eficiente
 * aderência à identidade da SATC
+
+---
+
+## 10. Estado Atual da Implementação (Abril/2026)
+
+### 10.1. Árvore funcional atual do app
+
+```text
+App
+├── Início
+│   ├── Ações rápidas
+│   │   ├── Financeiro
+│   │   ├── Aulas
+│   │   ├── Notas
+│   │   └── Atividades
+│   ├── Próxima aula
+│   │   └── Detalhe da aula
+│   ├── Atividades pendentes
+│   │   └── Detalhe da atividade
+│   ├── Financeiro (resumo)
+│   └── Avisos
+│       └── Reserva de matrícula
+│           └── Fluxo de reserva (Seleção > Revisão > Confirmação)
+├── Aulas
+│   ├── Aba Agenda
+│   │   ├── Filtro por dia da semana
+│   │   └── Card da aula
+│   │       ├── Entrar na call (online)
+│   │       └── Ver detalhes da aula
+│   └── Aba Frequência (Chamadas)
+│       ├── Resumo (aulas que foi, aulas que faltou, faltas em regra 4/dia)
+│       ├── Calendário de presença
+│       │   └── Clique no dia
+│       │       └── Detalhe de presença do dia
+│       │           ├── Conteúdo do dia (lista de aulas + conteúdo ministrado)
+│       │           └── Ações acadêmicas
+│       │               ├── Recorrer falta
+│       │               │   ├── Seleção das aulas faltadas
+│       │               │   ├── Motivo do recurso
+│       │               │   ├── Anexo de comprovante/atestado
+│       │               │   └── Protocolo de envio
+│       │               ├── Falar com coordenação
+│       │               └── Baixar resumo do dia
+│       └── Frequência por disciplina
+├── Atividades
+│   ├── Pendentes
+│   │   └── Detalhe (descrição + anexos + envio)
+│   └── Entregues
+│       └── Detalhe (status + nota/feedback ou aguardando correção)
+├── Financeiro
+│   ├── Fatura atual (status + CTA)
+│   │   ├── Pagar boleto
+│   │   │   ├── Dados do boleto
+│   │   │   ├── Copiar linha digitável
+│   │   │   └── Marcar pagamento (simulação)
+│   │   └── Ver comprovante
+│   │       ├── Data de pagamento
+│   │       ├── Protocolo
+│   │       └── Autenticação
+│   ├── Reserva de matrícula (atalho para fluxo)
+│   └── Histórico de pagamentos
+├── Avisos
+│   ├── Lista de avisos
+│   └── Navegação para reserva de matrícula
+└── Notas
+    ├── Lista por disciplina
+    └── Detalhe da disciplina (média, frequência e avaliações)
+```
+
+### 10.2. Componentes e páginas implementados
+
+```text
+app/src/components
+├── AppHeader
+├── BottomNav
+├── DetailHeader
+├── FinancialSummary
+├── NextClassCard
+├── NoticesPanel
+├── PageHeader
+├── PendingActivities
+└── QuickActions
+
+app/src/pages
+├── HomePage
+├── AulasPage
+├── AulaDetalhe
+├── ChamadasDiaDetalhe
+├── AtividadesPage
+├── AtividadeDetalhe
+├── FinanceiroPage
+├── AvisosPage
+├── MatriculaPage
+├── MatriculaReservaFlow
+├── NotasPage
+└── NotasDisciplinaDetalhe
+```
+
+### 10.3. Regras de presença implementadas em Chamadas
+
+* Status por dia no calendário: `presente`, `parcial`, `falta`, `hoje`, `futuro`.
+* O clique no dia abre detalhe único com seções de conteúdo e ações acadêmicas.
+* Quando houver falta, o aluno pode enviar recurso com comprovante/atestado.
+* O detalhamento de faltas apresenta:
+  * registros de falta no dia
+  * aulas faltadas no dia
+  * equivalência por regra de 4 faltas = 1 dia inteiro
+
+### 10.4. Regras de pagamento implementadas em Financeiro
+
+* Fluxo de pagamento de boleto dentro da área financeira:
+  * abertura dos dados do boleto
+  * cópia da linha digitável
+  * confirmação de pagamento em modo protótipo
+* Após pagamento, o status da mensalidade muda para `Pago`.
+* Exibição de comprovante com protocolo e código de autenticação.
+* Atualização do histórico com o novo pagamento realizado.
 
 A modelagem do app deve permitir que o design avance com clareza sobre estrutura, hierarquia, navegação, identidade visual e priorização de funcionalidades, mantendo o produto alinhado ao contexto real de uso dos estudantes.

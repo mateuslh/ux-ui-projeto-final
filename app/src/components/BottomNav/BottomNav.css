@@ -8,7 +8,8 @@
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
   padding-bottom: env(safe-area-inset-bottom);
-  box-shadow: 0 -4px 12px rgba(3, 54, 42, 0.06);
+  box-shadow: 0 -8px 24px rgba(3, 54, 42, 0.1);
+  backdrop-filter: blur(8px);
   z-index: 10;
 }
 
@@ -19,15 +20,16 @@
 }
 
 .bottom-nav__button {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 4px;
   color: var(--color-text-muted);
-  transition: color 0.12s ease;
+  transition: color 0.12s ease, transform 0.12s ease;
 }
 
 .bottom-nav__button--active {
@@ -35,9 +37,25 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.bottom-nav__button--active::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  width: 28px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-500);
+}
+
 .bottom-nav__icon {
-  font-size: 1.125rem;
-  line-height: 1;
+  width: 20px;
+  height: 20px;
+  line-height: 0;
+}
+
+.bottom-nav__icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .bottom-nav__label {
@@ -46,4 +64,8 @@
 
 .bottom-nav__button--active .bottom-nav__icon {
   color: var(--color-primary-700);
+}
+
+.bottom-nav__button:active {
+  transform: scale(0.96);
 }

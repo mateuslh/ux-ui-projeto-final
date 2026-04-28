@@ -1,6 +1,6 @@
 import './NextClassCard.css';
 
-function NextClassCard({ data }) {
+function NextClassCard({ data, onDetails }) {
   const isOnline = data.format === 'online';
   const formatLabel = isOnline ? 'Aula online' : 'Aula presencial';
 
@@ -18,15 +18,20 @@ function NextClassCard({ data }) {
         {isOnline ? 'Acesso online pelo link da call' : `Sala ${data.room ?? '—'}`}
       </p>
 
-      {isOnline && data.callLink ? (
-        <a className="next-class__action" href={data.callLink} target="_blank" rel="noreferrer">
-          Entrar na call
-        </a>
-      ) : (
-        <button type="button" className="next-class__action next-class__action--secondary">
+      <div className="next-class__actions">
+        {isOnline && data.callLink ? (
+          <a className="next-class__action" href={data.callLink} target="_blank" rel="noreferrer">
+            Entrar na call
+          </a>
+        ) : null}
+        <button
+          type="button"
+          className="next-class__action next-class__action--secondary"
+          onClick={onDetails}
+        >
           Ver detalhes
         </button>
-      )}
+      </div>
     </article>
   );
 }

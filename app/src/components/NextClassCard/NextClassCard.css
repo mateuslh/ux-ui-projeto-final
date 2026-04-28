@@ -70,8 +70,14 @@
   margin-top: var(--space-1);
 }
 
-.next-class__action {
+.next-class__actions {
+  display: flex;
+  gap: var(--space-2);
   margin-top: var(--space-3);
+}
+
+.next-class__action {
+  flex: 1;
   background-color: var(--color-primary-500);
   color: var(--color-primary-900);
   font-weight: var(--font-weight-semibold);
@@ -79,6 +85,7 @@
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
   transition: transform 0.12s ease, background-color 0.12s ease;
+  display: block;
 }
 
 .next-class__action:active {

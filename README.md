@@ -113,6 +113,7 @@ Todos os diagramas do projeto foram feitos em **[Mermaid](https://mermaid.js.org
 | Documento | Descrição |
 |---|---|
 | [Visão geral do projeto](docs/01-visao-geral-do-projeto.md) | Contexto, problema, objetivos, escopo, jornada, diretrizes de UX/UI e funcionalidades |
+| [Estado atual e delta da implementação](docs/02-estado-atual-e-delta-main.md) | Resumo do que está implementado no app e diferenças técnicas em relação à base atual da `main` |
 | [Sitemap](entregaveis/02-Arquitetura%20de%20Informa%C3%A7%C3%A3o%20%28sitemap%29%20%2B%20User%20Flow/01-arquitetura-da-informacao-sitemap.md) | Arquitetura da informação do aplicativo |
 | [User Flow](entregaveis/02-Arquitetura%20de%20Informa%C3%A7%C3%A3o%20%28sitemap%29%20%2B%20User%20Flow/02-user-flow.md) | Fluxos principais do usuário |
 

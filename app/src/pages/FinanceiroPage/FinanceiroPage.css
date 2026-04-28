@@ -1,0 +1,314 @@
+.section-title {
+  margin-bottom: var(--space-3);
+}
+
+.bill-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 4px solid var(--color-border);
+}
+
+.bill-card--pending {
+  border-top-color: var(--color-warning);
+}
+
+.bill-card--paid {
+  border-top-color: var(--color-primary-500);
+}
+
+.bill-card--overdue {
+  border-top-color: var(--color-danger);
+}
+
+.bill-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.bill-card__reference {
+  font-size: var(--font-size-t3);
+  color: var(--color-text-muted);
+}
+
+.bill-card__status-tag {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.bill-card__status-tag--pending {
+  background: rgba(199, 118, 26, 0.12);
+  color: var(--color-warning);
+}
+
+.bill-card__status-tag--paid {
+  background: rgba(29, 140, 79, 0.12);
+  color: var(--color-primary-700);
+}
+
+.bill-card__status-tag--overdue {
+  background: rgba(179, 38, 30, 0.1);
+  color: var(--color-danger);
+}
+
+.bill-card__amount {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong);
+  line-height: 1;
+}
+
+.bill-card__due {
+  font-size: var(--font-size-t3);
+  color: var(--color-text-muted);
+}
+
+.bill-card__action {
+  width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-t2);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  transition: opacity 0.12s ease;
+  margin-top: var(--space-1);
+}
+
+.bill-card__action--primary {
+  background: var(--color-primary-500);
+  color: var(--color-text-inverse);
+}
+
+.bill-card__action--secondary {
+  background: var(--color-surface-alt);
+  color: var(--color-primary-800);
+  border: 1px solid var(--color-border);
+}
+
+.bill-card__action:active {
+  opacity: 0.7;
+}
+
+.boleto-panel,
+.receipt-panel {
+  margin-top: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.boleto-panel__row,
+.receipt-panel__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+
+.boleto-panel__label,
+.receipt-panel__label {
+  font-size: var(--font-size-label);
+  color: var(--color-text-muted);
+}
+
+.boleto-panel__value,
+.receipt-panel__value {
+  font-size: var(--font-size-t3);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-strong);
+  text-align: right;
+}
+
+.boleto-panel__line-wrap {
+  background: #fff;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+}
+
+.boleto-panel__line-label {
+  font-size: var(--font-size-label);
+  color: var(--color-text-muted);
+}
+
+.boleto-panel__line {
+  margin-top: 2px;
+  font-size: var(--font-size-t3);
+  color: var(--color-text-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  word-break: break-all;
+}
+
+.boleto-panel__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.boleto-panel__btn {
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-t3);
+  font-weight: var(--font-weight-semibold);
+}
+
+.boleto-panel__btn--ghost {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  color: var(--color-primary-800);
+}
+
+.boleto-panel__btn--primary {
+  background: var(--color-primary-800);
+  color: var(--color-text-inverse);
+}
+
+.boleto-panel__btn:active {
+  opacity: 0.75;
+}
+
+.boleto-panel__hint {
+  font-size: var(--font-size-label);
+  color: var(--color-text-muted);
+}
+
+.receipt-panel__value--ok {
+  color: var(--color-primary-700);
+}
+
+.receipt-panel__value--mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.enrollment-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.enrollment-card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.enrollment-card__semester {
+  font-size: var(--font-size-t2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-strong);
+}
+
+.enrollment-card--badge-open {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  background: rgba(29, 140, 79, 0.12);
+  color: var(--color-primary-700);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.enrollment-card--badge-closed {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.enrollment-card__deadline {
+  font-size: var(--font-size-t3);
+  color: var(--color-text-muted);
+}
+
+.enrollment-card__action {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-t2);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  background: var(--color-primary-800);
+  color: var(--color-text-inverse);
+  transition: opacity 0.12s ease;
+}
+
+.enrollment-card__action:active {
+  opacity: 0.7;
+}
+
+.payment-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.payment-item__reference {
+  font-size: var(--font-size-t3);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-strong);
+}
+
+.payment-item__paid-on {
+  font-size: var(--font-size-label);
+  color: var(--color-text-muted);
+}
+
+.payment-item__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.payment-item__amount {
+  font-size: var(--font-size-t3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-strong);
+}
+
+.payment-item__status {
+  font-size: var(--font-size-label);
+  color: var(--color-primary-700);
+  font-weight: var(--font-weight-medium);
+}
